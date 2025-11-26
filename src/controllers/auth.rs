@@ -1,5 +1,3 @@
-use std::fmt::format;
-
 use actix_web::{HttpResponse, Responder, post, web};
 
 #[derive(serde::Deserialize, Debug)]
@@ -12,6 +10,8 @@ struct AuthData {
 
 #[post("/auth/signup")]
 pub async fn signup(data: web::Json<AuthData>) -> impl Responder {
+    HttpResponse::Ok().body("User Signedup");
+
     format!("SIGNED UP: {:?}", data)
 }
 

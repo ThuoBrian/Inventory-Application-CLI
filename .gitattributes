@@ -1,2 +1,60 @@
-# Auto detect text files and perform LF normalization
+# Set default behavior to automatically normalize line endings
 * text=auto
+
+# Rust source files
+*.rs text eol=lf diff=rust
+*.toml text eol=lf
+
+# Documentation
+*.md text eol=lf
+*.txt text eol=lf
+README text eol=lf
+LICENSE text eol=lf
+CHANGELOG text eol=lf
+
+# Scripts
+*.sh text eol=lf
+*.bash text eol=lf
+
+# Config files
+.editorconfig text eol=lf
+.gitignore text eol=lf
+.gitattributes text eol=lf
+
+# Windows-specific files (if needed)
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# Binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.wasm binary
+*.so binary
+*.dylib binary
+*.dll binary
+*.exe binary
+*.a binary
+*.lib binary
+
+# Archive files
+*.zip binary
+*.tar binary
+*.gz binary
+*.bz2 binary
+*.7z binary
+
+# Lock files (linguist - for GitHub language detection)
+Cargo.lock linguist-generated=true
+
+# Exclude from exports
+.gitattributes export-ignore
+.gitignore export-ignore
+.github/ export-ignore
+tests/ export-ignore
+benches/ export-ignore
+examples/ export-ignore

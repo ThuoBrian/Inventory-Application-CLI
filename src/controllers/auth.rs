@@ -10,8 +10,6 @@ struct AuthData {
 
 #[post("/auth/signup")]
 pub async fn signup(data: web::Json<AuthData>) -> impl Responder {
-    HttpResponse::Ok().body("User Signedup");
-
     format!("SIGNED UP: {:?}", data)
 }
 

@@ -1,12 +1,11 @@
-use actix_web::{App, HttpServer};
 mod controllers;
 
+use actix_web::{App, HttpServer};
+use tokio::sync::Mutex;
+
 struct AppState {
-    db: sqlx::SqlitePool,
+    db: Mutex<sqlx::SqlitePool>,
 }
-
-
-
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
@@ -19,6 +18,8 @@ async fn main() -> std::io::Result<()> {
     })
     .bind("127.0.0.1:8080")?
     .run()
-    .await
+    .await?;
 
+    println!("Server running at http://127.0.0.1:8080");
+    Ok(())
 }

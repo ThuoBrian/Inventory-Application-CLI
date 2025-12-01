@@ -24,15 +24,8 @@ API Endpoints (examples)
 - POST `/auth/signup` — register a new user (example handler present in `src/controllers/auth.rs`).
 - POST `/auth/signin` — sign in an existing user.
 
-Notes about routes
-- Currently the handlers in `src/controllers/auth.rs` use attribute routes with the `"/auth/..."` prefix. You can remove the prefix there and register a scope in `main.rs` instead if you prefer `App::service(web::scope("/auth").service(...))`.
-
 Database
 - `sqlx` is configured for SQLite in `Cargo.toml`. If you add migrations or use `sqlx-cli`, follow the `sqlx` docs for creating/updating the database schema.
-
-Development tips
-- Run `cargo fmt` to format code and `cargo clippy` (if installed) to lint.
-- Add integration tests under `tests/` to exercise the HTTP handlers using `actix_web::test` utilities.
 
 Contributing
 - Fork the repo, create a feature branch, and open a pull request. Keep changes small and focused.
@@ -42,7 +35,4 @@ License
 
 Contact
 - Open an issue or PR in this repository for questions or feature requests.
-
-Questions or changes?
-- Tell me if you want me to: add example curl commands, wire a SQLite DB with migrations, or add tests and CI workflow — I can implement those next.
 

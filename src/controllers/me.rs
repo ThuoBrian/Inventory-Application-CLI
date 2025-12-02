@@ -9,3 +9,8 @@ pub async fn get_profile() -> impl Responder {
 pub async fn update_profile() -> impl Responder {
     "update me"
 }
+
+#[get("/me")]
+pub async fn delete_profile() -> impl Responder {
+    "delete me"
+}

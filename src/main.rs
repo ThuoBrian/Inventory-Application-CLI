@@ -15,6 +15,7 @@ async fn main() -> std::io::Result<()> {
             .service(controllers::auth::signin)
             .service(controllers::me::get_profile)
             .service(controllers::me::update_profile)
+            .service(controllers::me::delete_profile)
     })
     .bind("127.0.0.1:8080")?
     .run()

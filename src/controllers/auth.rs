@@ -15,6 +15,9 @@ pub async fn signup(data: web::Json<AuthData>) -> impl Responder {
 
 #[post("/auth/signin")]
 pub async fn signin(data: web::Json<AuthData>) -> impl Responder {
-    HttpResponse::Ok().body(format!("User '{}': Fullname '
-{}': signed in", data.username , data.fullname))
+    HttpResponse::Ok().body(format!(
+        "User '{}': Fullname '
+{}': signed in",
+        data.username, data.fullname
+    ))
 }
